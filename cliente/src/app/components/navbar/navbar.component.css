@@ -1,0 +1,51 @@
+.navbar {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-brand {
+    margin-right: 2rem;
+  }
+  .navbar-nav {
+    margin-right: auto;
+  }
+  .form-inline {
+    margin-left: auto;
+  }
+  
+
+  .navbar-collapse .form-inline .input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-collapse .form-inline .input-group-append {
+    margin-left: -1px;
+  }
+
+  /*funciones para el boton*/
+  .btn-green {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-green:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+  }
+  
+  .btn-green:focus, .btn-green.focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+  }
+  
+  .btn-green.disabled, .btn-green:disabled {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-green:not(:disabled):not(.disabled):active, .btn-green:not(:disabled):not(.disabled).active,
+  .show > .btn-green.dropdown-toggle {
+    color: #fff;
+    background-color: #1e7e34;
+    border-color: #1c7430;
+  }
