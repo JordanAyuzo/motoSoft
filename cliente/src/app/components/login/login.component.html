@@ -15,6 +15,9 @@
             <div class="divider d-flex align-items-center my-4">
               <p class="text-center fw-bold mx-3 mb-0">Ingresar</p>
             </div>
+            <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+              Usuario o contraseña inválidos.
+            </div>
             <div class="form-outline mb-4">
               <label class="form-label fw-bold" for="usuario">Usuario:</label>
               <input [(ngModel)]="usuario.correo"  [ngModelOptions]="{ standalone: true }"  type="email" id="usuario" class="form-control form-control-lg"

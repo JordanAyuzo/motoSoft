@@ -10,6 +10,8 @@ class UsuarioRoutes {
     config() {
         this.router.get('/', (req, res) => res.send('probando Usuario'));
         this.router.post('/create', usuarioController_1.usuarioController.create);
+        this.router.post("/searchUser", usuarioController_1.usuarioController.searchUser);
+        this.router.post("/listOne", usuarioController_1.usuarioController.listOne);
     }
 }
 const usuarioRoutes = new UsuarioRoutes();

@@ -11,6 +11,8 @@ config() : void
 {
 this.router.get('/',(req,res) => res.send('probando Usuario'));
 this.router.post('/create', usuarioController.create);
+this.router.post("/searchUser",usuarioController.searchUser);
+this.router.post("/listOne",usuarioController.listOne)
 }
 }
 const usuarioRoutes= new UsuarioRoutes();

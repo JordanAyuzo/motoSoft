@@ -1,3 +1,6 @@
+
+
+/*funciones para el navbar*/
 .navbar {
     padding: 0.5rem 1rem;
   }
@@ -10,6 +13,9 @@
   .form-inline {
     margin-left: auto;
   }
+  .search-dropdown-container {
+    margin-right: 1px;
+  }
   
 
   .navbar-collapse .form-inline .input-group {
@@ -21,7 +27,7 @@
     margin-left: -1px;
   }
 
-  /*funciones para el boton*/
+  /*funciones para el boton buscar*/
   .btn-green {
     color: #fff;
     background-color: #28a745;
@@ -49,3 +55,9 @@
     background-color: #1e7e34;
     border-color: #1c7430;
   }
+
+  
+  /*para el cursos*/
+a.nav-link {
+  cursor: pointer;
+}

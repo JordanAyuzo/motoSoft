@@ -21,5 +21,17 @@ class UsuarioController {
             res.json(resp);
         });
     }
+    searchUser(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const resp = yield database_1.default.query("SELECT id FROM usuario WHERE correo = ? and clave = ?", [req.body.correo, req.body.clave]);
+            res.json(resp[0]);
+        });
+    }
+    listOne(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const resp = yield database_1.default.query("SELECT * FROM usuario WHERE id = ?", [req.body.id]);
+            res.json(resp[0]);
+        });
+    }
 }
 exports.usuarioController = new UsuarioController();

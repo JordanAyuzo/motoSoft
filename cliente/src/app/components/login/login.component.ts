@@ -1,6 +1,7 @@
 import { Component,AfterViewInit, ElementRef } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { Router,NavigationEnd } from '@angular/router';
+import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,9 +9,10 @@ import { Router,NavigationEnd } from '@angular/router';
 })
 export class LoginComponent {
   usuario = new Usuario();
-  constructor(private router: Router,   private elementRef: ElementRef) {
-
-    //se hace la consulta con el ide
+  public mostrarError: boolean = false;
+  constructor(private router: Router,
+              private elementRef: ElementRef,
+              private usuarioServices: UsuarioService) {
   }
   ngAfterViewInit() {
     this.router.events.subscribe(event => {
@@ -19,12 +21,18 @@ export class LoginComponent {
       }
     });
   }
-  ingresar(){
-
-  //se hace la consulta
-  
-  localStorage.setItem("dato",this.usuario.id +"");  
-    this.router.navigate(['/home']);
+  ingresar(){    
+    this.usuarioServices.searchUser(this.usuario).subscribe((resLogin: any) => {
+      if (resLogin.length !=0){
+        localStorage.setItem("dato",resLogin.id+""); 
+        this.router.navigate(['/home']); 
+      }
+      else{
+        this.mostrarError = true;
+      }
+  },
+      (err: any) => console.error(err)
+    );
   }
 
   registrarse(){
