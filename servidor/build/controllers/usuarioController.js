@@ -33,5 +33,11 @@ class UsuarioController {
             res.json(resp[0]);
         });
     }
+    match(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const resp = yield database_1.default.query("SELECT correo FROM usuario WHERE correo = ?", [req.body.correo]);
+            res.json(resp[0]);
+        });
+    }
 }
 exports.usuarioController = new UsuarioController();

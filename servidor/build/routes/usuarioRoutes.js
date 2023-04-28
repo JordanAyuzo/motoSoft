@@ -12,6 +12,7 @@ class UsuarioRoutes {
         this.router.post('/create', usuarioController_1.usuarioController.create);
         this.router.post("/searchUser", usuarioController_1.usuarioController.searchUser);
         this.router.post("/listOne", usuarioController_1.usuarioController.listOne);
+        this.router.post("/match", usuarioController_1.usuarioController.match);
     }
 }
 const usuarioRoutes = new UsuarioRoutes();

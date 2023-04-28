@@ -26,13 +26,13 @@
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem>Mis motos.</button>
             <button ngbDropdownItem>Mis tarjetas</button>
-            <button ngbDropdownItem>Salir</button>
+            <button ngbDropdownItem (click) = "salir()">Salir</button>
           </div>
         </div>
         <input class=" form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-outline-success my-2 my-sm-0 btn-green" type="submit">Buscar</button>
-          
+
         </div>
       </div>
     </form>

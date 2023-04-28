@@ -16,6 +16,10 @@ class UsuarioController
         const resp = await pool.query("SELECT * FROM usuario WHERE id = ?", [req.body.id]);
         res.json(resp[0]);
     }
+    public async match(req: Request, res: Response): Promise <void>{
+        const resp = await pool.query("SELECT correo FROM usuario WHERE correo = ?", [req.body.correo]);
+        res.json(resp[0]);
+    }
 
         
 }

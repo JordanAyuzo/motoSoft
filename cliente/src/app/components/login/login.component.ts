@@ -23,7 +23,7 @@ export class LoginComponent {
   }
   ingresar(){    
     this.usuarioServices.searchUser(this.usuario).subscribe((resLogin: any) => {
-      if (resLogin.length !=0){
+      if (resLogin !=null){
         localStorage.setItem("dato",resLogin.id+""); 
         this.router.navigate(['/home']); 
       }
@@ -36,7 +36,7 @@ export class LoginComponent {
   }
 
   registrarse(){
-
+    this.router.navigate(['/logup']); 
   }
   recuperarClave(){
     

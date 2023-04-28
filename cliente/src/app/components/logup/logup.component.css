@@ -1,0 +1,84 @@
+
+/*para que la pagina tenga animacion*/
+.fade-in {
+    animation: fadeIn ease 1s;
+    -webkit-animation: fadeIn ease 1s;
+    -moz-animation: fadeIn ease 1s;
+    -o-animation: fadeIn ease 1s;
+    -ms-animation: fadeIn ease 1s;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  ul {
+    list-style-type: none; /* remover marcadores de lista */
+    padding: 0; /* remover padding */
+    margin: 0; /* remover margin */
+    margin-top: 8px;
+  }
+  
+  .requisito {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+  }
+  
+  .requisito span {
+    margin-right: 10px;
+  }
+  
+  .cumplido {
+    text-decoration: line-through;
+    color: green;
+  }
+  .reg{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .btn-disabled {
+    opacity: 0; /* cambia la opacidad del botón para indicar que está deshabilitado */
+    cursor: not-allowed; /* cambia el cursor del mouse para indicar que no se puede hacer clic en el botón */
+  }

@@ -1,0 +1,54 @@
+<section class="vh-100 fade-in" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+                <img src="https://images.wuzzuf-data.net/files/company_covers/thumbs/a87c906f1bb16f752fe2405881b4649e.jpeg"
+                class="img-fluid" alt="MotoSoft">
+                <hr class="my-4">
+                <div *ngIf="pantalla1" >
+                  <h3 class="mb-3">Registrarse</h3>
+                  <div class="form-outline mb-4 d-flex align-items-center justify-content-between">
+                    <label class="form-label fw-bold" for="email" style="font-size: 1.5rem; color: #777;"><i class="fa fa-envelope" style="font-size: 1.6rem;"></i></label>
+                    <input [(ngModel)]="usuario.correo" type="email" id="email" class="form-control form-control-lg" style="margin-left: 10px; margin-right: 10px;" placeholder="Escriba un correo electronico" [ngClass]="claseErrorCorreo"/>
+                  </div>
+                  <div class="form-outline mb-4 d-flex align-items-center justify-content-between">
+                    <label class="form-label fw-bold" for="name" style="font-size: 1.5rem; color: #777;"><i class="fa fa-user" style="font-size: 1.6rem;"></i></label>
+                    <input type="name" id="name" class="form-control form-control-lg" style="margin-left: 10px; margin-right: 10px;" placeholder="Escriba un nombre de usuario" [(ngModel)]="usuario.nombre" [ngClass]="claseErrorNombre"/>
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+                    {{this.mensajeError}} 
+                  </div>
+                  <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="continuar()"> Continuar </button>
+                </div>
+                
+                <div class="fade-in" *ngIf="pantalla2">
+                  <h3 class="mb-3">Seguridad</h3>
+                  <div class="form-outline mb-4 d-flex align-items-center justify-content-between">
+                    <label class="form-label fw-bold" for="password" style="font-size: 1.5rem; color: #777;"><i class="fa fa-key" style="font-size: 1.6rem;"></i></label>
+                    <input type="{{inputType}}" id="password" class="form-control form-control-lg" style="margin-left: 10px; margin-right: 10px;" placeholder="Escribe una contraseña" [(ngModel)]="usuario.clave" (input)="actualizarRequisitos()"/>
+                    <button  *ngIf="!ver" type="button" class="btn btn-outline-secondary" (click)="visualizar()">
+                      <i class="fa fa-eye"></i>
+                    </button>
+                    <button  *ngIf="ver" type="button" class="btn btn-outline-secondary" (click)="visualizar()">
+                      <i class="fa fa-eye-slash"></i>
+                    </button>
+                  </div>
+                  <ul>
+                    <label class="form-label fw-bold">Toma en cuenta los siguientes requisitos:</label>
+                    <li class="requisito" [ngClass]="{'cumplido': req.cumplido}" *ngFor="let req of requisitosContrasenia">
+                      <span *ngIf="req.cumplido"><i class="fas fa-check"></i></span>{{req.texto}}
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary btn-lg btn-block reg " [disabled]="desabilitado" type="submit" (click)="registrar()"> Registrarse </button>
+                </div>
+              <hr class="my-4">
+            <label>@Motosoft Company</label>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -9,7 +9,7 @@ export class Usuario{
     constructor() {
         this.id = 0;
         this.correo = "";
-        this.nombre = " ";
+        this.nombre = "";
         this.clave="";
         this.tipo = 0;
         this.direccion ="";

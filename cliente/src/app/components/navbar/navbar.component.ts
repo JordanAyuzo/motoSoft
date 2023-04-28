@@ -31,16 +31,18 @@ export class NavbarComponent implements OnInit{
  ingresar(){
   this.router.navigate(['/login']);
  }
- registrarse(){}
+ registrarse(){
+  this.router.navigate(['/logup']);
+ }
  asociarse(){
   if(this.usuario.id!=-1){    
   }else{
     this.router.navigate(['/login']);
   }
  }
- opciones(){
-  //borrar esta linea
+ salir(){
   localStorage.clear();
+  window.location.reload();
  }
 
 }

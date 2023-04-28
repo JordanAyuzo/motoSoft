@@ -12,4 +12,7 @@ export class UsuarioService {
   listOne(usuario:any) {
     return this.http.post(`${environment.API_URI}/usuario/listOne`,usuario);
   }
+  match(usuario:any) {
+    return this.http.post(`${environment.API_URI}/usuario/match`,usuario);
+  }
 }
