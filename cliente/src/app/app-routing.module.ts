@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { LogupComponent } from './components/logup/logup.component';
-//borrar
-import { NavbarComponent } from './components/navbar/navbar.component'; 
+import { OfferComponent } from './components/offer/offer.component';
 const routes: Routes = [
   {
     path: "",
@@ -24,8 +23,8 @@ const routes: Routes = [
       component: LogupComponent,
       },
     {
-      path: 'navbar',
-      component: NavbarComponent,
+      path: 'offer',
+      component: OfferComponent,
       },
 ];
 

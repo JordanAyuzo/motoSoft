@@ -15,4 +15,7 @@ export class UsuarioService {
   match(usuario:any) {
     return this.http.post(`${environment.API_URI}/usuario/match`,usuario);
   }
+  create(usuario:any) {
+    return this.http.post(`${environment.API_URI}/usuario/create`,usuario);
+  }
 }

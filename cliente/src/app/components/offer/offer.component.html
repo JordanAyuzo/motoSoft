@@ -1,0 +1,88 @@
+<section>
+    <app-navbar></app-navbar>
+
+
+<div class="container" style="margin-top: 1em;">
+    <!-- Sign up form -->
+    <form>
+        <!-- Sign up card -->
+        <div class="card person-card">
+            <div class="card-body">
+                <!-- Sex image -->
+                <img id="img_sex" class="person-img"
+                    src="https://st2.depositphotos.com/1050737/6805/v/600/depositphotos_68057133-stock-illustration-motorcycle-racing-icon.jpg">
+                <h2 id="who_message" class="card-title">¿Quieres registrar tu motocicleta?</h2>
+                <!-- First row (on medium screen) -->
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <select id="input_sex" class="form-control">
+                            <option value="Mr.">Mr.</option>
+                            <option value="Ms.">Ms.</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input id="first_name" type="text" class="form-control" placeholder="First name">
+                        <div id="first_name_feedback" class="invalid-feedback">
+                            
+                        </div>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input id="last_name" type="text" class="form-control" placeholder="Last name">
+                        <div id="last_name_feedback" class="invalid-feedback">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 5em;">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">How to contact you ?</h2>
+                        <div class="form-group">
+                            <label for="email" class="col-form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="example@gmail.com" required>
+                            <div class="email-feedback">
+                            
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tel" class="col-form-label">Phone number</label>
+                            <input type="text" class="form-control" id="tel" placeholder="+33 6 99 99 99 99" required>
+                            <div class="phone-feedback">
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="col-md-6">
+                <div class="card"> 
+                    <div class="card-body">
+                        <h2 class="card-title"> ¡ Coloca una imagen !</h2>
+                        
+                        <div class="image-upload">
+                            <label for="file-input">
+                              <div class="image-preview">
+                                <img src="https://via.placeholder.com/150" alt="Imagen de ejemplo">
+                              </div>
+                              <span class="file-icon"><i class="fas fa-upload"></i></span>
+                              <span class="file-label">Seleccionar imagen</span>
+                            </label>
+                            <input id="file-input" type="file" name="image">
+                          </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 1em;">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Registrar</button>
+        </div>
+        </form>
+</div>
+
+</section>

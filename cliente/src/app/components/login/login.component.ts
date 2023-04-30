@@ -9,6 +9,7 @@ import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 })
 export class LoginComponent {
   usuario = new Usuario();
+  ver = false;
   public mostrarError: boolean = false;
   constructor(private router: Router,
               private elementRef: ElementRef,
@@ -34,11 +35,15 @@ export class LoginComponent {
       (err: any) => console.error(err)
     );
   }
-
   registrarse(){
     this.router.navigate(['/logup']); 
   }
   recuperarClave(){
-    
+  }
+  visualizar() {
+    this.ver = !this.ver;
+  }
+  get inputType() {
+    return this.ver ? 'text' : 'password';
   }
 }

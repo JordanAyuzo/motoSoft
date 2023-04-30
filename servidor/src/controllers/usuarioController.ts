@@ -20,7 +20,6 @@ class UsuarioController
         const resp = await pool.query("SELECT correo FROM usuario WHERE correo = ?", [req.body.correo]);
         res.json(resp[0]);
     }
-
         
 }
 export const usuarioController = new UsuarioController();

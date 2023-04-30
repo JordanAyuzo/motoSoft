@@ -66,3 +66,7 @@
     opacity: 1;
   }
 }
+
+.row.center-align {
+  text-align: center;
+}

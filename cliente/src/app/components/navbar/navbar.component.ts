@@ -36,13 +36,19 @@ export class NavbarComponent implements OnInit{
  }
  asociarse(){
   if(this.usuario.id!=-1){    
+    this.router.navigate(['/offer']);
   }else{
     this.router.navigate(['/login']);
   }
  }
  salir(){
   localStorage.clear();
-  window.location.reload();
+  if(window.location.pathname=="/home"){
+    window.location.reload();
+  }else{
+    this.router.navigate(['/home']);
+  }
+  
  }
 
 }

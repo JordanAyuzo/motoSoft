@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { Usuario } from 'src/app/models/usuario';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-logup',
   templateUrl: './logup.component.html',
@@ -25,7 +26,8 @@ export class LogupComponent {
   
   usuario = new Usuario;
 
-  constructor(private usuarioServices:UsuarioService){
+  constructor(private usuarioServices:UsuarioService,
+              private router: Router){
   }
 
   continuar() {
@@ -65,6 +67,17 @@ export class LogupComponent {
     
   }
   registrar(){
+    this.usuarioServices.create(this.usuario).subscribe((resLogup: any) => {
+      console.log(resLogup);
+      this.usuarioServices.searchUser(this.usuario).subscribe((resLogup: any) => {
+        localStorage.setItem("dato",resLogup.id+""); 
+        this.router.navigate(['/home']); 
+      },
+      (err: any) => console.error(err)
+      );
+    },
+    (err: any) => console.error(err)
+    );
   }
 
   visualizar() {
