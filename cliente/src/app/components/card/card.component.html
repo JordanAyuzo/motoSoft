@@ -1,0 +1,56 @@
+<section>
+    <app-navbar></app-navbar>
+
+
+    <div class="container">
+        <h1>Mis Tarjetas</h1>
+        <div class="row">
+          <div class="col-md-4">
+            
+            <div class="card">
+              <div class="card-header">
+                Mis tarjetas
+              </div>
+              <div class="card-body">
+                <div  *ngFor="let tarjeta of tarjetas">
+                    <h2 class="" > {{tarjeta.numero}} </h2>
+                    <p class="mb-1"><strong>Tipo:</strong> {{tarjeta.tipo}} </p>
+                    <p class="mb-1"><strong>Expiracion:</strong> {{tarjeta.expiracion}} </p>
+                    <hr class="my-4">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                Registro de tarjeta
+              </div>
+              <div class="card-body">
+                <form>
+                  <!-- Aquí iría el código para el formulario de registro de tarjeta -->
+                  <form >
+                    <div class="form-group">
+                      <label for="tipo">Tipo de tarjeta</label>
+                      <input type="text" class="form-control"  id="tipo" [(ngModel)]="tarjeta.tipo"  [ngModelOptions]="{ standalone: true }" name="tipo" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="numero">Número de Tarjeta</label>
+                      <input type="text" class="form-control" id="numero" [(ngModel)]="tarjeta.numero"  [ngModelOptions]="{ standalone: true }" name="numero" required>
+                    </div>
+                    <div class="form-row">
+                      <div class="col form-group">
+                        <label for="expiracion">Fecha de Expiración</label>
+                        <input type="date" class="form-control" id="expiracion" [(ngModel)]="tarjeta.expiracion"  [ngModelOptions]="{ standalone: true }" name="expiracion" required>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="registrar()">Registrar</button>
+                  </form>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</section>

@@ -4,6 +4,9 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { LogupComponent } from './components/logup/logup.component';
 import { OfferComponent } from './components/offer/offer.component';
+import { RentComponent } from './components/rent/rent.component';
+import { PayComponent } from './components/pay/pay.component';
+import { CardComponent } from './components/card/card.component';
 const routes: Routes = [
   {
     path: "",
@@ -26,6 +29,18 @@ const routes: Routes = [
       path: 'offer',
       component: OfferComponent,
       },
+      {
+        path: 'rent',
+        component: RentComponent,
+        },
+        {
+          path: 'pay',
+          component: PayComponent,
+          },
+          {
+            path: 'card',
+            component: CardComponent,
+            },
 ];
 
 @NgModule({

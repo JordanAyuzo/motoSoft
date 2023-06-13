@@ -44,7 +44,7 @@ export class NavbarComponent implements OnInit{
  salir(){
   localStorage.clear();
   if(window.location.pathname=="/home"){
-    window.location.reload();
+    location.reload();
   }else{
     this.router.navigate(['/home']);
   }

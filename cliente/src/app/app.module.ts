@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { LogupComponent } from './components/logup/logup.component';
 import { OfferComponent } from './components/offer/offer.component';
+import { RentComponent } from './components/rent/rent.component';
+import { PayComponent } from './components/pay/pay.component';
+import { CardComponent } from './components/card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,10 @@ import { OfferComponent } from './components/offer/offer.component';
     HomeComponent,
     NavbarComponent,
     LogupComponent,
-    OfferComponent
+    OfferComponent,
+    RentComponent,
+    PayComponent,
+    CardComponent
   ],
   imports: [
     HttpClientModule,

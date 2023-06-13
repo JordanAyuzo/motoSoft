@@ -1,6 +1,8 @@
 import express, {Application} from 'express';
 import indexRoutes from './routes/indexRoutes'; 
 import usuarioRoutes from './routes/usuarioRoutes';
+import motoRoutes from './routes/motoRoutes';
+import tarjetaRoutes from './routes/tarjetaRoutes';
 import morgan from 'morgan';
 import cors from 'cors';
 class Server
@@ -24,6 +26,8 @@ routes (): void
 {
     this.app.use(indexRoutes);
     this.app.use('/api/usuario',usuarioRoutes);
+    this.app.use('/api/moto',motoRoutes);
+    this.app.use('/api/tarjeta',tarjetaRoutes);
 }
 start (): void
 {
