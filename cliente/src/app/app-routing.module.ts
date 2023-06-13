@@ -7,6 +7,7 @@ import { OfferComponent } from './components/offer/offer.component';
 import { RentComponent } from './components/rent/rent.component';
 import { PayComponent } from './components/pay/pay.component';
 import { CardComponent } from './components/card/card.component';
+import { FormComponent } from './components/form/form.component';
 const routes: Routes = [
   {
     path: "",
@@ -20,27 +21,31 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'logup',
+    component: LogupComponent,
     },
-    {
-      path: 'logup',
-      component: LogupComponent,
-      },
-    {
-      path: 'offer',
-      component: OfferComponent,
-      },
-      {
-        path: 'rent',
-        component: RentComponent,
-        },
-        {
-          path: 'pay',
-          component: PayComponent,
-          },
-          {
-            path: 'card',
-            component: CardComponent,
-            },
+  {
+    path: 'offer',
+    component: OfferComponent,
+  },
+  {
+    path: 'rent',
+    component: RentComponent,
+  },
+  {
+    path: 'pay',
+    component: PayComponent,
+  },
+  {
+    path: 'card',
+    component: CardComponent,
+  },
+  {
+    path: 'form',
+    component: FormComponent,
+  },
 ];
 
 @NgModule({

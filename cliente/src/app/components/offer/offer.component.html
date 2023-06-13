@@ -54,6 +54,10 @@
                             <label for="seguro" class="col-form-label">Numero de seguro:</label>
                             <input type="text" class="form-control" id="seguro"  [(ngModel)]="moto.id_seguro" [ngModelOptions]="{ standalone: true }"  placeholder="Ejemplo: 1568464646844" required>
                         </div>
+                        <div class="form-group">
+                            <label for="costo" class="col-form-label">Costo Por Dia:</label>
+                            <input type="text" class="form-control" id="costo"  [(ngModel)]="moto.costo" [ngModelOptions]="{ standalone: true }"  placeholder="Ejemplo: 500" required>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -84,7 +88,6 @@
               </div>
             <button type="button" class="btn btn-primary btn-lg btn-block" (click)="registrar()">Registrar</button>
         </div>
-        
         </form>
 </div>
 
