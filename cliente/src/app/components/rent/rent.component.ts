@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { Moto } from 'src/app/models/moto';
 import { MotoService } from 'src/app/services/moto/moto.service';
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-rent',
   templateUrl: './rent.component.html',
@@ -10,7 +11,9 @@ export class RentComponent {
   moto = new Moto();
   motoAuxiliar:any;
   idMoto:any
-  constructor(private motoService: MotoService){
+
+  constructor(private router: Router,
+              private motoService: MotoService){
     this.idMoto = localStorage.getItem('moto')
     this.moto.id=this.idMoto
     this.motoService.listOne(this.moto).subscribe((resmoto: any) => {
@@ -24,6 +27,6 @@ export class RentComponent {
   
   }
   rentar(){
-
+    this.router.navigate(['/form']);
   }
 }
