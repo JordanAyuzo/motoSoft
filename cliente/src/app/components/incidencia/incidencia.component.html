@@ -18,5 +18,18 @@
       <button class="btn btn-primary mt-2 w-50" (click)="enviar()">Enviar</button>
     </div>
   </div>
+
+
+  <div class="alert alert-danger" role="alert" *ngIf="confirmacion"
+       style="color: #fff; background-color: #3bdc35; border-color: #3bdc35;">
+    <div class="text-center">
+      Reporte envíado correctamente.
+      Número de reporte: {{numeroReporte}}
+    </div>
+
+  </div>
+
 </div>
+
+
 

@@ -8,11 +8,14 @@ import {IncidenciaService} from "../../services/incidencia/incidencia.service";
 })
 export class IncidenciaComponent {
   incidencia: string
+  confirmacion: boolean
+  numeroReporte: number
 
   constructor(private incidenciaService: IncidenciaService) {
     this.incidencia = ''
+    this.confirmacion = false
+    this.numeroReporte = 0
   }
-
 
   enviar() {
     // Obtén una referencia al elemento textarea
@@ -28,6 +31,8 @@ export class IncidenciaComponent {
       usuario_id: usuario_id
     }).subscribe((res: any) => {
       console.log("Res: ", res)
+      this.confirmacion = true
+      this.numeroReporte = res.insertId
     })
 
 
