@@ -4,7 +4,7 @@ exports.default = {
     database: {
         host: 'localhost',
         user: 'root',
-        password: '',
-        database: 'sistema_motos'
+        password: 'Emm@Rob261',
+        database: 'moto_db'
     }
 };

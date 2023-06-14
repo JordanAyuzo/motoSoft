@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="" style="text-align:center">Reportar incidencia</h1>
+    <table class="table table-striped mt-3">
+      <tbody class="" style="text-align: center">
+      <tr>
+        <th>Descripción</th>
+      </tr>
+      <tr>
+        <td>
+          <textarea style="width: 100%; resize: vertical; max-height: 200px;"></textarea>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center">
+      <button class="btn btn-primary mt-2 w-50" (click)="enviar()">Enviar</button>
+    </div>
+  </div>
+
+
+  <div class="alert alert-danger" role="alert" *ngIf="confirmacion"
+       style="color: #fff; background-color: #3bdc35; border-color: #3bdc35;">
+    <div class="text-center">
+      Reporte envíado correctamente.
+      Número de reporte: {{numeroReporte}}
+    </div>
+
+  </div>
+
+</div>
+
+
+

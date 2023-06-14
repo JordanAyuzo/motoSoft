@@ -1,93 +1,99 @@
 <section>
-    <app-navbar></app-navbar>
+  <app-navbar></app-navbar>
 
 
-<div class="container" style="margin-top: 1em;">
+  <div class="container" style="margin-top: 1em;">
     <!-- Sign up form -->
     <form>
-        <div class="card person-card">
+      <div class="card person-card">
+        <div class="card-body">
+
+          <img id="img_sex" class="person-img"
+               src="assets\images\recursos\motoByN.jpg">
+          <h2 id="who_message" class="card-title">¿Quieres compartir la experiencia de andar en moto con otros? </h2>
+        </div>
+      <div class="row">
+        <div class="col-md-6 5em;">
+          <div class="card">
             <div class="card-body">
-
-                <img id="img_sex" class="person-img"
-                    src="assets\images\recursos\motoByN.jpg">
-                <h2 id="who_message" class="card-title">¿Quieres compartir la experiencia de andar en moto con otros? </h2>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-6 5em;">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="card-title" style="text-align:center">Ingresa los datos de tu motocicleta.</h2>
-                        <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
-                            Todos los campos son obligatorios.
-                          </div>
-                        <div class="form-group">
-                            <label for="marca" class="col-form-label">Marca:</label>
-                            <input type="text"  [(ngModel)]="moto.marca" [ngModelOptions]="{ standalone: true }" class="form-control" id="marca" placeholder="Ejemplo: Suzuki" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="modelo" class="col-form-label">Modelo:</label>
-                            <input type="text" class="form-control" id="modelo"  [(ngModel)]="moto.modelo" [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: SV 650" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="color" class="col-form-label">Color:</label>
-                            <input type="text" class="form-control" id="color"  [(ngModel)]="moto.color" [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: Rojo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="swacripcion" class="col-form-label">Descripcion corta:</label>
-                            <input type="text" class="form-control" id="descripcion"  [(ngModel)]="moto.descripcion" [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: Es una motocicleta muy buena" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nserie" class="col-form-label">Numero de serie:</label>
-                            <input type="text" class="form-control" id="nserie"  [(ngModel)]="moto.numero_serie" [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: JS2SC5705CM101581" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="matricula" class="col-form-label">Matricula:</label>
-                            <input type="text" class="form-control" id="matricula"  [(ngModel)]="moto.matricula" [ngModelOptions]="{ standalone: true }"  placeholder="Ejemplo: ABC-12-34" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="fecha_registro" class="col-form-label">Fecha de Registro:</label>
-                            <input type="date" class="form-control" id="fecha_registro"  [(ngModel)]="moto.fecha_registro" [ngModelOptions]="{ standalone: true }" placeholder="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="seguro" class="col-form-label">Numero de seguro:</label>
-                            <input type="text" class="form-control" id="seguro"  [(ngModel)]="moto.id_seguro" [ngModelOptions]="{ standalone: true }"  placeholder="Ejemplo: 1568464646844" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="costo" class="col-form-label">Costo Por Dia:</label>
-                            <input type="text" class="form-control" id="costo"  [(ngModel)]="moto.costo" [ngModelOptions]="{ standalone: true }"  placeholder="Ejemplo: 500" required>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                
-            <div class="col-md-6">
-                <div class="card"> 
-                    <div class="card-body" style="text-align:center">
-                        <h2 class="card-title" > ¡ Coloca una imagen !</h2>
-                        
-                        <div class="image-upload">
-                            <label for="file-input">
-                              <div class="image-preview">
-                                <img src="assets\images\recursos\ejemploMoto.jpg" alt="Imagen de ejemplo">
-                              </div>
-                              <span class="file-icon"><i class="fas fa-upload"></i></span>
-                              <span class="file-label">Seleccionar imagen</span>
-                            </label>
-                            <input id="file-input" type="file" name="image">
-                          </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div style="margin-top: 1em;">
-              <div class="alert alert-success" role="alert" *ngIf="registroExitoso">
-                Registro Exitoso!
+              <h2 class="card-title" style="text-align:center">Ingresa los datos de tu motocicleta.</h2>
+              <div class="alert alert-danger" role="alert" *ngIf="mostrarError">
+                Todos los campos son obligatorios.
               </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="registrar()">Registrar</button>
+              <div class="form-group">
+                <label for="marca" class="col-form-label">Marca:</label>
+                <input type="text" [(ngModel)]="moto.marca" [ngModelOptions]="{ standalone: true }" class="form-control"
+                       id="marca" placeholder="Ejemplo: Suzuki" required>
+              </div>
+              <div class="form-group">
+                <label for="modelo" class="col-form-label">Modelo:</label>
+                <input type="text" class="form-control" id="modelo" [(ngModel)]="moto.modelo"
+                       [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: SV 650" required>
+              </div>
+              <div class="form-group">
+                <label for="color" class="col-form-label">Color:</label>
+                <input type="text" class="form-control" id="color" [(ngModel)]="moto.color"
+                       [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: Rojo" required>
+              </div>
+              <div class="form-group">
+                <label for="swacripcion" class="col-form-label">Descripcion corta:</label>
+                <input type="text" class="form-control" id="descripcion" [(ngModel)]="moto.descripcion"
+                       [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: Es una motocicleta muy buena"
+                       required>
+              </div>
+              <div class="form-group">
+                <label for="nserie" class="col-form-label">Numero de serie:</label>
+                <input type="text" class="form-control" id="nserie" [(ngModel)]="moto.numero_serie"
+                       [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: JS2SC5705CM101581" required>
+              </div>
+              <div class="form-group">
+                <label for="matricula" class="col-form-label">Matricula:</label>
+                <input type="text" class="form-control" id="matricula" [(ngModel)]="moto.matricula"
+                       [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: ABC-12-34" required>
+              </div>
+              <div class="form-group">
+                <label for="fecha_registro" class="col-form-label">Fecha de Registro:</label>
+                <input type="date" class="form-control" id="fecha_registro" [(ngModel)]="moto.fecha_registro"
+                       [ngModelOptions]="{ standalone: true }" placeholder="" required>
+              </div>
+              <div class="form-group">
+                <label for="seguro" class="col-form-label">Numero de seguro:</label>
+                <input type="text" class="form-control" id="seguro" [(ngModel)]="moto.id_seguro"
+                       [ngModelOptions]="{ standalone: true }" placeholder="Ejemplo: 1568464646844" required>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body" style="text-align:center">
+              <h2 class="card-title"> ¡ Coloca una imagen !</h2>
+
+              <div class="image-upload">
+                <label for="file-input">
+                  <div class="image-preview">
+                    <img src="assets\images\recursos\ejemploMoto.jpg" alt="Imagen de ejemplo">
+                  </div>
+                  <span class="file-icon"><i class="fas fa-upload"></i></span>
+                  <span class="file-label">Seleccionar imagen</span>
+                </label>
+                <input id="file-input" type="file" name="image">
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 1em;">
+        <div class="alert alert-success" role="alert" *ngIf="registroExitoso">
+          Registro Exitoso!
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="registrar()">Registrar</button>
+      </div>
+
+    </form>
+  </div>
         </form>
 </div>
 

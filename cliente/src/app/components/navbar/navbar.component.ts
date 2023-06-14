@@ -7,13 +7,13 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  providers: [NgbDropdownModule] 
+  providers: [NgbDropdownModule]
 })
 export class NavbarComponent implements OnInit{
   usuario= new Usuario();
   datoauxiliar: any;
   constructor(private router: Router,
-              private usuarioServices: UsuarioService) { 
+              private usuarioServices: UsuarioService) {
     this.datoauxiliar = localStorage.getItem('dato')
     if(this.datoauxiliar!=null){
       this.usuario.id = this.datoauxiliar;
@@ -35,12 +35,16 @@ export class NavbarComponent implements OnInit{
   this.router.navigate(['/logup']);
  }
  asociarse(){
-  if(this.usuario.id!=-1){    
+  if(this.usuario.id!=-1){
     this.router.navigate(['/offer']);
   }else{
     this.router.navigate(['/login']);
   }
  }
+ incidencia(){
+    this.router.navigate(['/incidencia']);
+ }
+
  salir(){
   localStorage.clear();
   if(window.location.pathname=="/home"){
@@ -48,7 +52,7 @@ export class NavbarComponent implements OnInit{
   }else{
     this.router.navigate(['/home']);
   }
-  
+
  }
 
 }

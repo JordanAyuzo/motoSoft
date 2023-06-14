@@ -15,6 +15,7 @@ import { OfferComponent } from './components/offer/offer.component';
 import { RentComponent } from './components/rent/rent.component';
 import { PayComponent } from './components/pay/pay.component';
 import { CardComponent } from './components/card/card.component';
+import {IncidenciaComponent} from "./components/incidencia/incidencia.component";
 import { FormComponent } from './components/form/form.component';
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FormComponent } from './components/form/form.component';
     RentComponent,
     PayComponent,
     CardComponent,
+    IncidenciaComponent
     FormComponent
   ],
   imports: [
