@@ -26,7 +26,8 @@ module.exports = (formulario) => {
             Estimado administrador,
             se ha reportado una incidencia en el sistema con número de reporte : .
             Por favor, ingrese al sistema para darle seguimiento.
-            Ingresar aquí el detalle de la incidencia
+            <a href="http://localhost:4200/incidencia/${token}" >Cambiar contraseña</a>
+            
 `
     };
     console.log(message);

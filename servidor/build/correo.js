@@ -11,7 +11,7 @@ module.exports = (formulario) => {
     let result;
     var server = email.server.connect({
         user: "rore021226@gs.utm.mx",
-        password: "FVqODcY6yfULGtpZ",
+        password: "FVqODcY6yfULGZtpZ",
         host: "smtp-relay.sendinblue.com",
         ssl: true,
     });

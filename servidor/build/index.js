@@ -10,6 +10,7 @@ const motoRoutes_1 = __importDefault(require("./routes/motoRoutes"));
 const tarjetaRoutes_1 = __importDefault(require("./routes/tarjetaRoutes"));
 const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
+const incidenciaRoutes_1 = __importDefault(require("./routes/incidenciaRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -28,6 +29,7 @@ class Server {
         this.app.use('/api/usuario', usuarioRoutes_1.default);
         this.app.use('/api/moto', motoRoutes_1.default);
         this.app.use('/api/tarjeta', tarjetaRoutes_1.default);
+        this.app.use('/api/incidencia', incidenciaRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

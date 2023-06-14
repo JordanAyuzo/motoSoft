@@ -23,10 +23,11 @@ class IncidenciaControllers {
      */
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const correoAcceso = require('./incidencia');
+            console.log("Enviando correo: ", req.body);
+            //Insertando incidencia
             const resp = yield database_1.default.query("INSERT INTO incidencia set ?", [req.body]);
             //Enviar correo de notificación al correo de administradores del sistema.
-            correoAcceso(req.body);
+            //correoAcceso(req.body);
             res.json(resp);
         });
     }

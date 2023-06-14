@@ -30,36 +30,13 @@ class Server {
     }
 
     routes(): void {
-        this.app.post('/enviarCorreoRecuperarContrasenya', (req, res) => {
-            correoAcceso(req.body);
-        });
-        this.app.post('/decodificarMail', async (req, res) => {
-            let decodificado;
-            try {
-                decodificado = jwt.verify(req.body.token, process.env.TOKEN_SECRET || 'prueba');
-                console.log(decodificado);
-                const result1 = await this.queryMail(decodificado) as any;
-                console.log(result1);
-                if (result1.length == 0)
-                    res.json(0);
-                else
-                    res.json(result1[0]);
-            } catch (err) {
-                res.json(0);
-            }
+        this.app.post('/api/incidencia', (req, res) => {
+            console.log("Enviando correo: ", req.body)
+            //correoAcceso(req.body);
+            res.json({message: 'Incidencia enviada'});
         });
     }
 
-    queryMail = (decodificado: any) => {
-        return new Promise((resolve, reject) => {
-            let consulta = 'SELECT email FROM usuario WHERE email = "' + decodificado + '"';
-            pool.query(consulta, (error: any, results: any) => {
-                if (error)
-                    return reject(error);
-                return resolve(results);
-            });
-        });
-    };
 
     start() {
         this.app.listen(this.app.get('port'), () => {

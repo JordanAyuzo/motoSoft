@@ -8,8 +8,7 @@ class IncidenciaRoutes {
         this.config();
     }
     config() {
-        this.router.put('/', incidenciaControllers_1.incidenciaControllers.create);
-        //this.router.get('/',(req,res) => res.send('probando ruta'));
+        this.router.post('/', incidenciaControllers_1.incidenciaControllers.create);
     }
 }
 const incidenciaRoutes = new IncidenciaRoutes();
