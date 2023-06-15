@@ -8,6 +8,8 @@ import {RentComponent} from './components/rent/rent.component';
 import {PayComponent} from './components/pay/pay.component';
 import {CardComponent} from './components/card/card.component';
 import {IncidenciaComponent} from "./components/incidencia/incidencia.component";
+import {DetalleRentaComponent} from "./components/detalle-renta/detalle-renta.component";
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
@@ -56,6 +58,10 @@ const routes: Routes = [
   {
     path: 'incidencia',
     component: IncidenciaComponent,
+  },
+  {
+    path: 'detalle-renta',
+    component: DetalleRentaComponent,
   }
     path: 'form',
     component: FormComponent,
