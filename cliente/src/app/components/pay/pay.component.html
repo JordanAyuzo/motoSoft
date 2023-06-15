@@ -1,29 +1,37 @@
 <section>
-    <app-navbar></app-navbar>
+  <app-navbar></app-navbar>
 
-    <div class="container my-5">
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="card bg-primary text-white">
-              <div class="card-header text-center">
-                <h3>Selecciona la tarjeta a Pagar</h3>
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card bg-primary text-white">
+          <div class="card-header text-center">
+            <h3>Selecciona la tarjeta a Pagar</h3>
+          </div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="tarjeta">Tarjeta:</label>
+                <select class="form-control" id="tarjeta" *ngFor="let tarjeta of tarjetas">
+                  <option>Tarjeta {{tarjeta.tipo}}: {{tarjeta.numero}} </option>
+                </select>
               </div>
-              <div class="card-body">
-                <form>
-                  <div class="form-group">
-                    <label for="tarjeta">Tarjeta:</label>
-                    <select class="form-control" id="tarjeta" *ngFor="let tarjeta of tarjetas">
-                            <option>Tarjeta {{tarjeta.tipo}}: {{tarjeta.numero}} </option>
-                    </select>
-                  </div>
-                  <button type="submit" class="btn btn-light mt-3 mx-auto d-block" (click)="pagar(tarjeta.id)">Pagar</button>
-                </form>
-              </div>
-            </div>
+              <button type="submit" class="btn btn-light mt-3 mx-auto d-block" (click)="pagar(tarjeta.id)">Pagar
+              </button>
+            </form>
           </div>
         </div>
       </div>
-      
-      
+    </div>
+  </div>
+
+
+  <div class="alert alert-danger" role="alert" *ngIf="confirmacion"
+       style="color: #fff; background-color: #3bdc35; border-color: #3bdc35;">
+    <div class="text-center">
+      Pago realizado correctamente
+    </div>
+
+  </div>
 
 </section>
