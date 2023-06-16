@@ -104,9 +104,9 @@ export class DetalleRentaComponent {
         console.log(resmoto);
         localStorage.removeItem('espera')
 
-        /*        localStorage.removeItem('costo')
-                localStorage.removeItem('fechaInicial')
-                localStorage.removeItem('fechaFinal')*/
+        localStorage.removeItem('costo')
+        localStorage.removeItem('fechaInicial')
+        localStorage.removeItem('fechaFinal')
 
         this.confirmacion = true
         setTimeout(() => {

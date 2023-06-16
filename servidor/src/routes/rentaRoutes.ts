@@ -11,6 +11,7 @@ class RentasRoutes {
     config(): void {
         this.router.post('/', rentaControllers.create);
         this.router.get('/list/:id', rentaControllers.list);
+        this.router.delete('/cancelar/:id', rentaControllers.cancelar);
     }
 }
 
