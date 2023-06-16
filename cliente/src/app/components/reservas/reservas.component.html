@@ -1,0 +1,25 @@
+<section>
+  <app-navbar></app-navbar>
+  <div class="container">
+    <div class="text-center">
+      <h1>Mis reservas</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Listado de reservas
+          </div>
+          <div class="card-body">
+            <div *ngFor="let tarjeta of rentas">
+              <h5 class="mb-1">Reserva: </h5>
+              <p class="mb-1"><strong>Fecha de inicio:</strong> {{tarjeta.fecha_inicio}} </p>
+              <p class="mb-1"><strong>Fecha de finalización:</strong> {{tarjeta.fecha_limite}} </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
