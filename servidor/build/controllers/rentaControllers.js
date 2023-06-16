@@ -21,5 +21,13 @@ class RentaControllers {
             res.json(resp);
         });
     }
+    list(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log("Buenos dias ", req.params.id);
+            const resp = yield database_1.default.query("SELECT * FROM renta WHERE id_usuario = ?", [req.params.id]);
+            console.log(resp);
+            res.json(resp);
+        });
+    }
 }
 exports.rentaControllers = new RentaControllers();

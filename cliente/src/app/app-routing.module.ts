@@ -9,6 +9,7 @@ import {PayComponent} from './components/pay/pay.component';
 import {CardComponent} from './components/card/card.component';
 import {IncidenciaComponent} from "./components/incidencia/incidencia.component";
 import {DetalleRentaComponent} from "./components/detalle-renta/detalle-renta.component";
+import {ReservasComponent} from "./components/reservas/reservas.component";
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'detalle-renta',
     component: DetalleRentaComponent,
+  },
+  {
+    path: 'mis-reservas',
+    component: ReservasComponent,
   }
 ];
 

@@ -13,4 +13,8 @@ export class RentaService {
   rentar(datos: any) {
     return this.http.post(`${environment.API_URI}/renta/`, datos);
   }
+
+  list(id_usuario: any) {
+    return this.http.get(`${environment.API_URI}/renta/list/` + id_usuario);
+  }
 }

@@ -1,6 +1,7 @@
-<nav   class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">MotoSoft</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -13,22 +14,26 @@
         <a class="nav-link" (click)="asociarse()">Asociarse</a>
       </li>
       <li class="nav-item">
-        <a *ngIf="this.usuario.id != -1"  class="nav-link" href="#">Mi Historial</a>
+        <a *ngIf="this.usuario.id != -1" class="nav-link" href="#">Mi Historial</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <div class="input-group">
-        <a *ngIf="this.usuario.id == -1"  class="btn btn-outline-primary my-2 my-sm-0 ml-2 text-white" (click)="registrarse()">Registrarse</a>
-        <a *ngIf="this.usuario.id == -1" class="btn btn-outline-primary my-2 my-sm-0 ml-2 text-white" (click)="ingresar()" >Ingresar</a>
+        <a *ngIf="this.usuario.id == -1" class="btn btn-outline-primary my-2 my-sm-0 ml-2 text-white"
+           (click)="registrarse()">Registrarse</a>
+        <a *ngIf="this.usuario.id == -1" class="btn btn-outline-primary my-2 my-sm-0 ml-2 text-white"
+           (click)="ingresar()">Ingresar</a>
 
-        <div ngbDropdown  class="search-dropdown-container" >
-          <button *ngIf="this.usuario.id != -1" class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle><i class="fa fa-user"></i>  {{this.usuario.nombre}}  </button>
+        <div ngbDropdown class="search-dropdown-container">
+          <button *ngIf="this.usuario.id != -1" class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle><i
+            class="fa fa-user"></i>  {{this.usuario.nombre}}  </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
             <button ngbDropdownItem>Mis motos.</button>
             <button ngbDropdownItem>Mis tarjetas</button>
+            <button ngbDropdownItem (click)="reservas()">Mis reservas</button>
             <!-- TODO Agregar funcionalidad a reportar incidencia  -->
-            <button ngbDropdownItem (click) = "incidencia()">Reportar incidencia</button>
-            <button ngbDropdownItem (click) = "salir()">Salir</button>
+            <button ngbDropdownItem (click)="incidencia()">Reportar incidencia</button>
+            <button ngbDropdownItem (click)="salir()">Salir</button>
           </div>
         </div>
         <input class=" form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">

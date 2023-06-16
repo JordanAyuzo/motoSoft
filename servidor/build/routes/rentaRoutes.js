@@ -9,6 +9,7 @@ class RentasRoutes {
     }
     config() {
         this.router.post('/', rentaControllers_1.rentaControllers.create);
+        this.router.get('/list/:id', rentaControllers_1.rentaControllers.list);
     }
 }
 const rentasRoutes = new RentasRoutes();
