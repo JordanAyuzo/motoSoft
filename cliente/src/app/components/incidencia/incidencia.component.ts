@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IncidenciaService} from "../../services/incidencia/incidencia.service";
+import {Incidencia} from "../../models/incidencia";
 
 @Component({
   selector: 'app-incidencia',
@@ -10,11 +11,15 @@ export class IncidenciaComponent {
   incidencia: string
   confirmacion: boolean
   numeroReporte: number
+  incidencia_objeto: any
 
   constructor(private incidenciaService: IncidenciaService) {
     this.incidencia = ''
     this.confirmacion = false
     this.numeroReporte = 0
+
+    this.incidencia_objeto = new Incidencia()
+
   }
 
   enviar() {
@@ -23,16 +28,14 @@ export class IncidenciaComponent {
 
 // Asigna el valor del textarea a una variable
     // @ts-ignore
-    const valorTextarea = textarea.value;
-    console.log("Valor: ", valorTextarea)
-    let usuario_id = localStorage.getItem('dato')
+    this.incidencia_objeto.descripcion = textarea.value;
+    this.incidencia_objeto.id_usuario = localStorage.getItem('dato')
     this.incidenciaService.crearIncidencia({
-      descripcion: valorTextarea,
-      usuario_id: usuario_id
+      descripcion: this.incidencia_objeto.descripcion,
+      usuario_id: this.incidencia_objeto.id_usuario
     }).subscribe((res: any) => {
-      console.log("Res: ", res)
       this.confirmacion = true
-      this.numeroReporte = res.insertId
+      this.incidencia_objeto.id = res.insertId
     })
 
 

@@ -16,6 +16,7 @@ export class BusquedaComponent {
   motos: any;
   moto = new Moto();
   busqueda: any
+  coincidencia: boolean = false
 
 
   constructor(private router: Router,
@@ -33,17 +34,21 @@ export class BusquedaComponent {
           if (msg.tipo == 1) {
             this.busquedaService.buscar_marca(this.busqueda).subscribe((resbusqueda: any) => {
               this.motos = resbusqueda;
+              this.cambiarCoincidencia()
             })
           }
           if (msg.tipo == 2) {
             this.busquedaService.buscar_modelo(this.busqueda).subscribe((resbusqueda: any) => {
               this.motos = resbusqueda;
             })
+            this.cambiarCoincidencia()
+
           }
           if (msg.tipo == 3) {
             this.busquedaService.buscar_kilometraje(this.busqueda).subscribe((resbusqueda: any) => {
               this.motos = resbusqueda;
             })
+            this.cambiarCoincidencia()
           }
 
 
@@ -51,6 +56,14 @@ export class BusquedaComponent {
       }
     )
 
+  }
+
+  cambiarCoincidencia() {
+    if (this.motos.length == 0) {
+      this.coincidencia = true
+    } else {
+      this.coincidencia = false
+    }
   }
 
   vermoto(id: any) {

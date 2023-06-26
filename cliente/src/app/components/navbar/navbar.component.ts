@@ -69,6 +69,10 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  tarjetas() {
+    this.router.navigate(['/card']);
+  }
+
   reservas() {
     this.router.navigate(['/mis-reservas']);
   }
@@ -79,7 +83,7 @@ export class NavbarComponent implements OnInit {
 
     let mensaje = {'component': 0, 'tipo': this.tipo}
     this.comunicacionService.enviar(mensaje)
-    
+
     this.router.navigate(['/busqueda']);
   }
 
