@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import incidenciaRoutes from "./routes/incidenciaRoutes";
 import rentaRoutes from "./routes/rentaRoutes";
+import busquedaRoutes from "./routes/busquedaRoutes";
 
 class Server {
     public app: Application;
@@ -32,6 +33,7 @@ class Server {
         this.app.use('/api/tarjeta', tarjetaRoutes);
         this.app.use('/api/incidencia', incidenciaRoutes);
         this.app.use('/api/renta', rentaRoutes);
+        this.app.use('/api/busqueda', busquedaRoutes);
     }
 
     start(): void {

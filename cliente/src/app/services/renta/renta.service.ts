@@ -17,4 +17,8 @@ export class RentaService {
   list(id_usuario: any) {
     return this.http.get(`${environment.API_URI}/renta/list/` + id_usuario);
   }
+
+  cancelar(id_renta: any) {
+    return this.http.delete(`${environment.API_URI}/renta/cancelar/` + id_renta);
+  }
 }

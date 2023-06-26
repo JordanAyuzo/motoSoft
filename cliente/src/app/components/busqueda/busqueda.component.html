@@ -1,0 +1,36 @@
+<section class="fade-in vh-100">
+  <app-navbar></app-navbar>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-sm-4 mb-3" *ngFor="let moto of motos|
+        paginate: {
+        itemsPerPage: pageSize,
+        currentPage: p
+        };let i=index">
+        <div class="card mb-3 custom-card" (click)="vermoto(moto.id)">
+          <img src="assets\images\recursos\ejemploMoto.jpg" class="card-img-top custom-img" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{moto.marca}} {{moto.modelo}}</h5>
+            <p class="card-text">{{moto.descripcion}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row center-align">
+      <pagination-controls class="my-pagination" (pageChange)="p = ($event)" previousLabel=""
+                           nextLabel=""></pagination-controls>
+    </div>
+  </div>
+
+
+  <div class="alert alert-danger" role="alert" *ngIf="coincidencia"
+  >
+    <div class="text-center">
+      No se han encontrado coincidencias.
+    </div>
+
+  </div>
+
+</section>

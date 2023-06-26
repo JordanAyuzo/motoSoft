@@ -1,63 +1,70 @@
-
-
 /*funciones para el navbar*/
 .navbar {
-    padding: 0.5rem 1rem;
-  }
-  .navbar-brand {
-    margin-right: 2rem;
-  }
-  .navbar-nav {
-    margin-right: auto;
-  }
-  .form-inline {
-    margin-left: auto;
-  }
-  .search-dropdown-container {
-    margin-right: 1px;
-  }
-  
+  padding: 0.5rem 1rem;
+}
 
-  .navbar-collapse .form-inline .input-group {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-collapse .form-inline .input-group-append {
-    margin-left: -1px;
-  }
+.navbar-brand {
+  margin-right: 2rem;
+}
 
-  /*funciones para el boton buscar*/
-  .btn-green {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-  }
-  
-  .btn-green:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-  }
-  
-  .btn-green:focus, .btn-green.focus {
-    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
-  }
-  
-  .btn-green.disabled, .btn-green:disabled {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745;
-  }
-  
-  .btn-green:not(:disabled):not(.disabled):active, .btn-green:not(:disabled):not(.disabled).active,
-  .show > .btn-green.dropdown-toggle {
-    color: #fff;
-    background-color: #1e7e34;
-    border-color: #1c7430;
-  }
+.navbar-nav {
+  margin-right: auto;
+}
 
-  
-  /*para el cursos*/
+.form-inline {
+  margin-left: auto;
+}
+
+.search-dropdown-container {
+  margin-right: 1px;
+}
+
+
+.navbar-collapse .form-inline .input-group {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-collapse .form-inline .input-group-append {
+  margin-left: -1px;
+}
+
+/*funciones para el boton buscar*/
+.btn-green {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-green:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.btn-green:focus, .btn-green.focus {
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.btn-green.disabled, .btn-green:disabled {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-green:not(:disabled):not(.disabled):active, .btn-green:not(:disabled):not(.disabled).active,
+.show > .btn-green.dropdown-toggle {
+  color: #fff;
+  background-color: #1e7e34;
+  border-color: #1c7430;
+}
+
+
+/*para el cursos*/
 a.nav-link {
   cursor: pointer;
+}
+
+.custom-select {
+  width: 60px; /* Ajusta el ancho según tus necesidades */
+  font-size: 14px; /* Ajusta el tamaño de fuente según tus necesidades */
 }

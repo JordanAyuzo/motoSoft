@@ -13,9 +13,6 @@
       <li class="nav-item">
         <a class="nav-link" (click)="asociarse()">Asociarse</a>
       </li>
-      <li class="nav-item">
-        <a *ngIf="this.usuario.id != -1" class="nav-link" href="#">Mi Historial</a>
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <div class="input-group">
@@ -28,19 +25,27 @@
           <button *ngIf="this.usuario.id != -1" class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle><i
             class="fa fa-user"></i>  {{this.usuario.nombre}}  </button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button ngbDropdownItem>Mis motos.</button>
-            <button ngbDropdownItem>Mis tarjetas</button>
+            <button ngbDropdownItem (click)="tarjetas()">Mis tarjetas</button>
             <button ngbDropdownItem (click)="reservas()">Mis reservas</button>
             <!-- TODO Agregar funcionalidad a reportar incidencia  -->
             <button ngbDropdownItem (click)="incidencia()">Reportar incidencia</button>
             <button ngbDropdownItem (click)="salir()">Salir</button>
           </div>
         </div>
-        <input class=" form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-outline-success my-2 my-sm-0 btn-green" type="submit">Buscar</button>
 
+        <input class="mr-sm-2" placeholder="Buscar" type="search" name="busqueda"
+               [(ngModel)]="busqueda"/>
+        <div class="input-group-append">
+          <select class="custom-select" id="inputGroupSelect02" name="tipo" [(ngModel)]="tipo">
+            <option value="1" selected>Marca</option>
+            <option value="2">Modelo</option>
+            <option value="3">Kilometraje</option>
+          </select>
+          <button class="btn btn-outline-success my-2 my-sm-0 btn-green" (click)="buscar()">Buscar
+          </button>
         </div>
+
+
       </div>
     </form>
   </div>

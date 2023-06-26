@@ -10,6 +10,7 @@ import {CardComponent} from './components/card/card.component';
 import {IncidenciaComponent} from "./components/incidencia/incidencia.component";
 import {DetalleRentaComponent} from "./components/detalle-renta/detalle-renta.component";
 import {ReservasComponent} from "./components/reservas/reservas.component";
+import {BusquedaComponent} from "./components/busqueda/busqueda.component";
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: 'mis-reservas',
     component: ReservasComponent,
+  },
+  {
+    path: 'busqueda',
+    component: BusquedaComponent
   }
     path: 'form',
     component: FormComponent,

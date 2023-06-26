@@ -3,6 +3,10 @@ import {Router} from '@angular/router';
 import {Usuario} from 'src/app/models/usuario';
 import {UsuarioService} from 'src/app/services/usuario/usuario.service';
 import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
+import {BusquedaService} from "../../services/busqueda/busqueda.service";
+import {FormsModule} from '@angular/forms';
+import {ComunicacionService} from "../../services/comunicacion/comunicacion.service";
+
 
 @Component({
   selector: 'app-navbar',
@@ -13,9 +17,13 @@ import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 export class NavbarComponent implements OnInit {
   usuario = new Usuario();
   datoauxiliar: any;
+  busqueda: any;
+  tipo: any
 
   constructor(private router: Router,
-              private usuarioServices: UsuarioService) {
+              private usuarioServices: UsuarioService,
+              private busquedaService: BusquedaService,
+              private comunicacionService: ComunicacionService) {
     this.datoauxiliar = localStorage.getItem('dato')
     if (this.datoauxiliar != null) {
       this.usuario.id = this.datoauxiliar;
@@ -61,8 +69,26 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  tarjetas() {
+    this.router.navigate(['/card']);
+  }
+
   reservas() {
     this.router.navigate(['/mis-reservas']);
+  }
+
+  buscar() {
+    console.log("El tipo es: ", this.tipo)
+    localStorage.setItem("busqueda", this.busqueda);
+
+    let mensaje = {'component': 0, 'tipo': this.tipo}
+    this.comunicacionService.enviar(mensaje)
+
+    this.router.navigate(['/busqueda']);
+  }
+
+  enviarMensaje(index: any) {
+
   }
 
 }

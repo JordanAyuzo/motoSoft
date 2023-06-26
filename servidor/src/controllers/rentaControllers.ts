@@ -15,6 +15,12 @@ class RentaControllers {
         console.log(resp)
         res.json(resp);
     }
+
+    public async cancelar(req: Request, res: Response): Promise<void> {
+        const resp = await pool.query("DELETE FROM renta WHERE id = ?",
+            [req.params.id]);
+        res.json(resp);
+    }
 }
 
 export const rentaControllers = new RentaControllers();

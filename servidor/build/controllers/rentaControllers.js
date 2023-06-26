@@ -29,5 +29,11 @@ class RentaControllers {
             res.json(resp);
         });
     }
+    cancelar(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const resp = yield database_1.default.query("DELETE FROM renta WHERE id = ?", [req.params.id]);
+            res.json(resp);
+        });
+    }
 }
 exports.rentaControllers = new RentaControllers();

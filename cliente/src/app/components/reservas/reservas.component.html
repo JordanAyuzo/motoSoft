@@ -12,14 +12,25 @@
             Listado de reservas
           </div>
           <div class="card-body">
-            <div *ngFor="let tarjeta of rentas">
+            <div *ngFor="let renta of rentas">
               <h5 class="mb-1">Reserva: </h5>
-              <p class="mb-1"><strong>Fecha de inicio:</strong> {{tarjeta.fecha_inicio}} </p>
-              <p class="mb-1"><strong>Fecha de finalización:</strong> {{tarjeta.fecha_limite}} </p>
+              <p class="mb-1"><strong>Fecha de inicio:</strong> {{renta.fecha_inicio}} </p>
+              <p class="mb-1"><strong>Fecha de finalización:</strong> {{renta.fecha_limite}} </p>
+              <button class="btn btn-primary mt-2 w-100" (click)="cancelar(renta.id)">Cancelar</button>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="confirmacion"
+       style="color: #fff; background-color: #31ab2d; border-color: #31ab2d;">
+    <div class="text-center">
+      Cancelación exitosa.
+    </div>
+
+  </div>
+
 </section>
