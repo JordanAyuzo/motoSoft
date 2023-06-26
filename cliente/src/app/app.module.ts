@@ -19,6 +19,8 @@ import {IncidenciaComponent} from "./components/incidencia/incidencia.component"
 import { DetalleRentaComponent } from './components/detalle-renta/detalle-renta.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
+
+import { FormComponent } from './components/form/form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +36,10 @@ import { BusquedaComponent } from './components/busqueda/busqueda.component';
     DetalleRentaComponent,
     ReservasComponent,
     BusquedaComponent
+    ReservasComponent
+    DetalleRentaComponent
+    IncidenciaComponent
+    FormComponent
   ],
   imports: [
     HttpClientModule,
