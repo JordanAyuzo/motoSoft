@@ -23,19 +23,34 @@ export class BusquedaComponent {
               private busquedaService: BusquedaService,
               private comunicacionService: ComunicacionService) {
 
+
     this.comunicacionService.observador$.subscribe(
       (msg) => {
         if (msg.component === 0) {
           this.busqueda = localStorage.getItem('busqueda')
           localStorage.removeItem('busqueda')
-          console.log(this.busqueda)
-          this.busquedaService.buscar_nombre(this.busqueda).subscribe((resbusqueda: any) => {
-            this.motos = resbusqueda;
-            console.log("Mostrando motos 2")
-          })
+
+          if (msg.tipo == 1) {
+            this.busquedaService.buscar_marca(this.busqueda).subscribe((resbusqueda: any) => {
+              this.motos = resbusqueda;
+            })
+          }
+          if (msg.tipo == 2) {
+            this.busquedaService.buscar_modelo(this.busqueda).subscribe((resbusqueda: any) => {
+              this.motos = resbusqueda;
+            })
+          }
+          if (msg.tipo == 3) {
+            this.busquedaService.buscar_kilometraje(this.busqueda).subscribe((resbusqueda: any) => {
+              this.motos = resbusqueda;
+            })
+          }
+
+
         }
       }
     )
+
   }
 
   vermoto(id: any) {

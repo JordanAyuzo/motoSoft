@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   usuario = new Usuario();
   datoauxiliar: any;
   busqueda: any;
+  tipo: any
 
   constructor(private router: Router,
               private usuarioServices: UsuarioService,
@@ -73,14 +74,17 @@ export class NavbarComponent implements OnInit {
   }
 
   buscar() {
+    console.log("El tipo es: ", this.tipo)
     localStorage.setItem("busqueda", this.busqueda);
-    this.enviarMensaje(0)
+
+    let mensaje = {'component': 0, 'tipo': this.tipo}
+    this.comunicacionService.enviar(mensaje)
+    
     this.router.navigate(['/busqueda']);
   }
 
   enviarMensaje(index: any) {
-    let mensaje = {'component': index}
-    this.comunicacionService.enviar(mensaje)
+
   }
 
 }
