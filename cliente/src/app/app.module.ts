@@ -18,6 +18,7 @@ import { CardComponent } from './components/card/card.component';
 import {IncidenciaComponent} from "./components/incidencia/incidencia.component";
 import { DetalleRentaComponent } from './components/detalle-renta/detalle-renta.component';
 import { ReservasComponent } from './components/reservas/reservas.component';
+import { BusquedaComponent } from './components/busqueda/busqueda.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ReservasComponent } from './components/reservas/reservas.component';
     CardComponent,
     IncidenciaComponent,
     DetalleRentaComponent,
-    ReservasComponent
+    ReservasComponent,
+    BusquedaComponent
   ],
   imports: [
     HttpClientModule,

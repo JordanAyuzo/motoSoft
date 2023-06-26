@@ -36,10 +36,11 @@
             <button ngbDropdownItem (click)="salir()">Salir</button>
           </div>
         </div>
-        <input class=" form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+        <input class="mr-sm-2" placeholder="Buscar" type="search" name="busqueda"
+               [(ngModel)]="busqueda"/>
         <div class="input-group-append">
-          <button class="btn btn-outline-success my-2 my-sm-0 btn-green" type="submit">Buscar</button>
-
+          <button class="btn btn-outline-success my-2 my-sm-0 btn-green" (click)="buscar()">Buscar
+          </button>
         </div>
       </div>
     </form>
